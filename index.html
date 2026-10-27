@@ -246,6 +246,32 @@
                 transition: none !important;
             }
         }
+
+        /* Detalhes do projeto exibidos na mesma página */
+        .projeto { cursor: pointer; }
+        .projeto button { all: unset; display:block; width:100%; cursor:pointer; color:inherit; }
+        .projeto button:focus-visible { outline:3px solid var(--accent); outline-offset:3px; border-radius:var(--radius-sm); }
+        .modal-backdrop { position:fixed; inset:0; z-index:1000; background:rgba(3,18,31,.82); display:none; overflow-y:auto; padding:24px; }
+        .modal-backdrop.aberto { display:flex; align-items:flex-start; justify-content:center; }
+        .detalhe-modal { width:min(100%,1000px); margin:auto; background:var(--background); color:var(--text); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:0 18px 60px rgba(0,0,0,.45); overflow:hidden; }
+        .modal-topo { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 20px; background:var(--primary-dark); border-bottom:3px solid var(--accent); }
+        .modal-topo h2 { color:white; font-size:20px; font-weight:bold; }
+        .fechar-modal { border:0; border-radius:8px; padding:8px 12px; background:var(--accent); color:white; font-size:20px; cursor:pointer; }
+        .detalhe-corpo { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(240px,1fr); gap:22px; padding:22px; }
+        .jogo-area { min-width:0; }
+        .jogo-preview { width:100%; aspect-ratio:16/9; object-fit:contain; background:#09243a; border-radius:10px; border:1px solid var(--border); }
+        .jogo-placeholder { display:flex; min-height:220px; aspect-ratio:16/9; align-items:center; justify-content:center; text-align:center; padding:20px; background:#09243a; border-radius:10px; color:var(--text-muted); }
+        .acoes-jogo { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+        .acao-jogo { display:inline-block; padding:10px 14px; border-radius:8px; background:var(--accent); color:white; font-weight:bold; text-decoration:none; }
+        .acao-jogo.secundaria { background:var(--primary-light); }
+        .grupo-foto { width:100%; max-height:320px; object-fit:contain; background:#09243a; border-radius:10px; }
+        .sem-foto { display:flex; min-height:180px; align-items:center; justify-content:center; text-align:center; padding:16px; border:1px dashed var(--border); border-radius:10px; color:var(--text-muted); }
+        .info-grupo { line-height:1.6; }
+        .info-grupo h3 { margin:16px 0 6px; color:var(--accent); }
+        .info-grupo p { margin:0 0 10px; }
+        .modal-descricao { color:var(--text-muted); line-height:1.6; }
+        @media (max-width:700px) { .modal-backdrop { padding:10px; } .detalhe-corpo { grid-template-columns:1fr; padding:15px; } .modal-topo { padding:14px; } .modal-topo h2 { font-size:17px; } }
+
     </style>
 </head>
 
@@ -253,181 +279,124 @@
 
     <header>
         <h1>SKA <span>TECH</span>hub</h1>
-        <h2>3ª Jornada Tecnológica – Projetos Finais</h2>
+        <h2>4ª Jornada Tecnológica – Projetos Finais</h2>
     </header>
 
     <p class="subtitulo">
-        Para abrir, dê um clique em cima do projeto que deseja visualizar.
+        Selecione um projeto para ver os integrantes, a turma, a foto e o jogo sem abrir outra guia.
     </p>
 
-    <main class="container">
-
-        <!-- T1 -->
-        <section class="coluna">
-            <h3>T1 – Quinta-feira / Manhã</h3>
-
-            <div class="grade">
-                <div class="projeto">
-                    <a href="detalhe-t1-alice-kauane.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Alice, Kauane
-                    </a>
-                </div>
-
-                <div class="projeto">
-                    <a href="detalhe-t1-camila-rafaela.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Camila, Rafaela
-                    </a>
-                </div>
-
-                <div class="projeto">
-                    <a href="detalhe-t1-eduarda-erica-juliana.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Eduarda, Érica e Juliana
-                    </a>
-                </div>
-
-                <div class="projeto">
-                    <a href="detalhe-t1-vitor-wesley.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Vitor, Wesley
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- T2 -->
-        <section class="coluna">
-            <h3>T2 – Quinta-feira / Tarde</h3>
-
-            <div class="grade">
-                <div class="projeto">
-                    <a href="detalhe-t2-camilly-matheus.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Camilly, Matheus
-                    </a>
-                </div>
-
-                <div class="projeto">
-                    <a href="detalhe-t2-deise-janaina.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Deise, Janaína
-                    </a>
-                </div>
-
-                <div class="projeto">
-                    <a href="detalhe-t2-luiz-lucas-ryan.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Luiz, Lucas, Ryan
-                    </a>
-                </div>
-
-                <div class="projeto">
-                    <a href="detalhe-t2-geovana-yasmin.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Geovana, Yasmin
-                    </a>
-                </div>
-                <div class="projeto">
-                    <a href="detalhe-t2-fernanda-gabriela.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Fernanda, Gabriela
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- T3 -->
-        <section class="coluna">
-            <h3>T3 – Sábado / Manhã</h3>
-
-            <div class="grade">
-                <div class="projeto">
-                    <a href="detalhe-t3-eloisa-amanda.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                       Eloisa e Amanda
-                    </a>
-                </div>
-
-                <div class="projeto">
-                    <a href="detalhe-t3-nathan-luis.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Nathan e Luís
-                    </a>
-                </div>
-
-                <div class="projeto">
-                    <a href="detalhe-t3-kamilla-luiz.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Kamilla e Luiz
-                    </a>
-                </div>
-
-                <div class="projeto">
-                    <a href="detalhe-t3-arthur-andre.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                        Arthur e André
-                    </a>
-                </div>
-                 <div class="projeto">
-                          <a href="detalhe-t3-bianca-camille.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                       Bianca e Camille
-                    </a>
-                </div>
-                        <div class="projeto">
-                    <a href="detalhe-t3-brenda-isabeli.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                      Brenda e Isabeli
-                    </a>
-                </div>
-                        <div class="projeto">
-                    <a href="detalhe-t3-estephany-laura.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                    Estephany e Laura                  
-                  </a>
-                </div>
-                        <div class="projeto">
-                    <a href="detalhe-t3-milena-jefferson.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                      Milena e Jefferson
-                    </a>
-                </div>
-                             <div class="projeto">
-                    <a href="detalhe-t3-jesse-lorenzo-carlos.html" target="_blank" rel="noopener">
-                        <div class="thumb"
-                             style="background-image: url('imagens/preview-pendente.svg')"></div>
-                     Jessé, Lorenzo e Carlos
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
+    <main class="container" id="lista-projetos" aria-label="Lista de projetos"></main>
 
     <footer>
-        <span>SKA TECHhub</span> · 3ª Jornada Tecnológica<br>
-        Funciona offline — mantenha a pasta "imagens" e os arquivos .sb3
-        na mesma pasta deste HTML.
+        <span>SKA TECHhub</span> · 4ª Jornada Tecnológica<br>
+        Mantenha este arquivo HTML junto das pastas <strong>imagens</strong> e <strong>jogos</strong>.
     </footer>
 
+    <div class="modal-backdrop" id="modal-projeto" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+        <section class="detalhe-modal">
+            <div class="modal-topo">
+                <h2 id="modal-titulo">Detalhes do projeto</h2>
+                <button class="fechar-modal" id="fechar-modal" type="button" aria-label="Fechar detalhes">×</button>
+            </div>
+            <div class="detalhe-corpo">
+                <section class="jogo-area">
+                    <div id="area-jogo"></div>
+                    <h3 id="titulo-jogo"></h3>
+                    <p class="modal-descricao" id="descricao-jogo"></p>
+                    <div class="acoes-jogo" id="acoes-jogo"></div>
+                </section>
+                <aside class="info-grupo">
+                    <div id="area-foto"></div>
+                    <h3>Integrantes</h3><p id="integrantes"></p>
+                    <h3>Turma</h3><p id="turma"></p>
+                </aside>
+            </div>
+        </section>
+    </div>
+
+    <script>
+    /*
+      CADASTRO DOS PROJETOS
+      Edite os dados abaixo. Os caminhos são relativos a este index.html.
+      Foto: pasta imagens/. Jogo .sb3: pasta jogos/.
+      Para jogos publicados no Scratch, preencha scratchUrl com o link do projeto.
+    */
+    const projetos = [
+      { turmaId:'T1', turma:'T1 – Quinta-feira / Manhã', integrantes:'Alice, Kauane', slug:'t1-alice-kauane' },
+      { turmaId:'T1', turma:'T1 – Quinta-feira / Manhã', integrantes:'Camila, Rafaela', slug:'t1-camila-rafaela' },
+      { turmaId:'T1', turma:'T1 – Quinta-feira / Manhã', integrantes:'Eduarda, Érica e Juliana', slug:'t1-eduarda-erica-juliana' },
+      { turmaId:'T1', turma:'T1 – Quinta-feira / Manhã', integrantes:'Vitor, Wesley', slug:'t1-vitor-wesley' },
+      { turmaId:'T2', turma:'T2 – Quinta-feira / Tarde', integrantes:'Camilly, Matheus', slug:'t2-camilly-matheus' },
+      { turmaId:'T2', turma:'T2 – Quinta-feira / Tarde', integrantes:'Deise, Janaína', slug:'t2-deise-janaina' },
+      { turmaId:'T2', turma:'T2 – Quinta-feira / Tarde', integrantes:'Luiz, Lucas, Ryan', slug:'t2-luiz-lucas-ryan' },
+      { turmaId:'T2', turma:'T2 – Quinta-feira / Tarde', integrantes:'Geovana, Yasmin', slug:'t2-geovana-yasmin' },
+      { turmaId:'T2', turma:'T2 – Quinta-feira / Tarde', integrantes:'Fernanda, Gabriela', slug:'t2-fernanda-gabriela' },
+      { turmaId:'T3', turma:'T3 – Sábado / Manhã', integrantes:'Eloisa e Amanda', slug:'t3-eloisa-amanda' },
+      { turmaId:'T3', turma:'T3 – Sábado / Manhã', integrantes:'Kamilla e Luiz', slug:'t3-kamilla-luiz' },
+      { turmaId:'T3', turma:'T3 – Sábado / Manhã', integrantes:'Arthur e André', slug:'t3-arthur-andre' },
+      { turmaId:'T3', turma:'T3 – Sábado / Manhã', integrantes:'Bianca e Camille', slug:'t3-bianca-camille' },
+      { turmaId:'T3', turma:'T3 – Sábado / Manhã', integrantes:'Brenda e Isabeli', slug:'t3-brenda-isabeli' },
+      { turmaId:'T3', turma:'T3 – Sábado / Manhã', integrantes:'Estephany e Laura', slug:'t3-estephany-laura' },
+      { turmaId:'T3', turma:'T3 – Sábado / Manhã', integrantes:'Milena e Jefferson', slug:'t3-milena-jefferson' },
+      { turmaId:'T3', turma:'T3 – Sábado / Manhã', integrantes:'Jessé, Lorenzo e Carlos', slug:'t3-jesse-lorenzo-carlos' }
+    ].map(p => ({
+      ...p,
+      titulo: 'Projeto de ' + p.integrantes,
+      descricao: 'Projeto desenvolvido pelos integrantes.',
+      foto: 'imagens/' + p.slug + '.jpg',
+      preview: 'imagens/' + p.slug + '-preview.png',
+      jogo: 'jogos/' + p.slug + '.sb3',
+      scratchUrl: '' // Exemplo: 'https://scratch.mit.edu/projects/123456789/'
+    }));
+
+    const lista = document.getElementById('lista-projetos');
+    const modal = document.getElementById('modal-projeto');
+    const escapeHtml = valor => String(valor ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const turmas = [
+      { id:'T1', titulo:'T1 – Quinta-feira / Manhã' },
+      { id:'T2', titulo:'T2 – Quinta-feira / Tarde' },
+      { id:'T3', titulo:'T3 – Sábado / Manhã' }
+    ];
+
+    function renderizarLista() {
+      lista.innerHTML = turmas.map(t => {
+        const cards = projetos.filter(p => p.turmaId === t.id).map((p, i) => `
+          <div class="projeto"><button type="button" data-slug="${escapeHtml(p.slug)}" aria-label="Ver projeto de ${escapeHtml(p.integrantes)}">
+            <div class="thumb" style="background-image:url('imagens/preview-pendente.svg')" aria-hidden="true"></div>
+            ${escapeHtml(p.integrantes)}
+          </button></div>`).join('');
+        return `<section class="coluna"><h3>${escapeHtml(t.titulo)}</h3><div class="grade">${cards}</div></section>`;
+      }).join('');
+      lista.querySelectorAll('[data-slug]').forEach(btn => btn.addEventListener('click', () => abrirProjeto(btn.dataset.slug)));
+    }
+
+    function abrirProjeto(slug) {
+      const p = projetos.find(item => item.slug === slug);
+      if (!p) return;
+      document.getElementById('modal-titulo').textContent = p.integrantes;
+      document.getElementById('titulo-jogo').textContent = p.titulo;
+      document.getElementById('descricao-jogo').textContent = p.descricao;
+      document.getElementById('integrantes').textContent = p.integrantes;
+      document.getElementById('turma').textContent = p.turma;
+
+      const areaJogo = document.getElementById('area-jogo');
+      areaJogo.innerHTML = p.scratchUrl
+        ? `<iframe class="jogo-preview" src="${escapeHtml(p.scratchUrl.replace('https://scratch.mit.edu/projects/', 'https://scratch.mit.edu/projects/embed/').replace(/\/$/, ''))}" title="Jogo Scratch de ${escapeHtml(p.integrantes)}" allowtransparency="true" allowfullscreen></iframe>`
+        : `<div class="jogo-placeholder">O jogo aparecerá aqui quando você cadastrar o link público do Scratch.<br><br>O arquivo .sb3 pode ser aberto ou importado no editor Scratch.</div>`;
+
+      document.getElementById('area-foto').innerHTML = `<img class="grupo-foto" src="${escapeHtml(p.foto)}" alt="Foto de ${escapeHtml(p.integrantes)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="sem-foto" style="display:none">Adicione a foto do grupo em:<br>${escapeHtml(p.foto)}</div>`;
+      const acoes = document.getElementById('acoes-jogo');
+      acoes.innerHTML = `<a class="acao-jogo" href="${escapeHtml(p.jogo)}" download>Baixar arquivo .sb3</a>` + (p.scratchUrl ? `<a class="acao-jogo secundaria" href="${escapeHtml(p.scratchUrl)}" target="_blank" rel="noopener">Abrir no Scratch</a>` : `<a class="acao-jogo secundaria" href="https://scratch.mit.edu/" target="_blank" rel="noopener">Abrir editor Scratch</a>`);
+      modal.classList.add('aberto');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('fechar-modal').focus();
+    }
+    function fecharProjeto() { modal.classList.remove('aberto'); document.body.style.overflow = ''; }
+    document.getElementById('fechar-modal').addEventListener('click', fecharProjeto);
+    modal.addEventListener('click', e => { if (e.target === modal) fecharProjeto(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('aberto')) fecharProjeto(); });
+    renderizarLista();
+    </script>
 </body>
 </html>
